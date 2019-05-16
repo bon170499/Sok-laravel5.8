@@ -1,0 +1,166 @@
+#js-up {
+    display: none;
+}
+
+.nav-user {
+    width: 40%;
+    height: 100vh;
+    padding-top: 10rem;
+    background: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1009;
+    transition: all .4s linear;
+    transform: translateX(100%);
+    font-size: 1rem;
+
+    .user-content {
+        width: 80%;
+    }
+
+    .user-title {
+        font-size: 2.8em;
+        margin-bottom: 5rem;
+
+        h4 {
+            cursor: pointer;
+        }
+    }
+    .user-small {
+        font-size: 1.2em;
+        font-style: italic;
+        color: #ab3434;
+    }
+
+    .form-groud {
+        border-bottom: 1px solid #dddddd;
+        margin: 3rem 0;
+    }
+
+    input[type=text],
+    [type=password],
+    [type=email] {
+        border: none;
+        width: 100%;
+        padding: 1rem 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 1.4em;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    input[type=submit] {
+        border: none;
+        padding: 1.5rem 3rem;
+        width: 100%;
+        background: rgb(31, 31, 31);
+        color: #ffffff;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        cursor: pointer;
+        transition: .4s linear;
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+}
+.nav-cart {
+    @extend .nav-user;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0;
+    &__content {
+        width: 80%;
+        height: 50%;
+        padding-bottom: 3rem;
+        border-bottom: 1px solid #222222;
+        overflow-y: auto;
+    }
+    &__button {
+        width: 80%;
+    }
+    &__title {
+        width: 80%;
+        font-size: 1.6rem;
+    }
+    &__desc {
+        font-size: 1.4rem;
+        margin: 0.5rem 0;
+    }
+}
+.nav-active-user {
+    transform: translateX(0%);
+}
+
+.nav-title-click {
+    opacity: 0.5;
+}
+
+.modall {
+    display: none;
+    position: fixed;
+    z-index: 103;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+
+    .modal-contentt {
+        margin: 0 auto;
+        display: block;
+        width: 60%;
+        max-width: 700px;
+        animation-name: zoom;
+        animation-duration: 0.6s;
+    }
+
+    #modal-close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    #modal-close:hover,
+    #modal-close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    /* Black w/ opacity */
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+@media (max-width: 768px) {
+    .nav-user {
+        width: 80%;
+    }
+    .nav-cart .nav-cart__desc {
+        font-size: 1.1rem;
+    }
+}
+@media (max-width: 576px) {
+    .nav-cart, .nav-user {
+        width: 100% !important;
+    }
+}

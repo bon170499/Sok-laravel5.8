@@ -1,0 +1,28 @@
+.main-order {
+    font-size: 1rem;
+    max-width: 60%;
+    margin: 5rem auto;
+    .information {
+        text-align: center;
+        font-size: 2.4em;
+        margin: 1em 0;
+    }
+    .order {
+        font-size: 1.6em;
+        &__title {
+            font-weight: 600;
+            margin: 1em 0;
+        }
+    }
+    .order-detail {
+        border: 1px solid #333333;
+        padding: 1rem;
+        border-radius: 10px;
+        margin: 3em 0;
+    }
+}
+@media (max-width: 768px){
+    .main-order {
+        max-width: 90%;
+    }
+}

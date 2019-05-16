@@ -1,0 +1,54 @@
+@import '_main.scss';
+.main-checkout {
+    font-size: 1.4rem;
+    margin: 3rem 0;
+
+    .container {
+        padding: 2rem;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .form-gr {
+        border-bottom: 1px solid #dddddd;
+        margin: 1rem 0;
+
+        input[type=number],
+        [type=text],
+        [type=email],
+        [type=password] {
+            border: none;
+            width: 100%;
+            padding: 1rem 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+
+    label {
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    input[type=submit] {
+        width: 100%;
+        background: rgb(31, 31, 31);
+        color: #ffffff;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        border: none;
+        cursor: pointer;
+        padding: 1.4rem 0;
+        transition: .4s linear;
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+
+    span.price {
+        float: right;
+        color: grey;
+    }
+}

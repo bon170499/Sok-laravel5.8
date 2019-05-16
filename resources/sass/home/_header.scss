@@ -1,0 +1,172 @@
+@import 'mixins.scss';
+
+.background {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    background-attachment: fixed;
+    background-clip: padding-box;
+    height: 100vh;
+    width: 100%;
+}
+
+.stick {
+    position: fixed;
+    top: 0;
+    z-index: 33;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    transition: all .5s linear;
+    box-shadow: 0.5rem 0.5rem 0.5rem rgba(51, 51, 51, 0.1);
+}
+
+.drop {
+    position: relative;
+
+    &__content {
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        background: rgba(255, 255, 255, 1);
+        min-width: 20rem;
+        box-shadow: 0rem 0.3rem 0.7rem 0 rgba(0, 0, 0, 0.2);
+        transition: all .2s linear;
+        z-index: 12;
+    }
+
+    &__item {
+        display: block;
+        padding: 1rem 2rem;
+        font-size: 1.2rem;
+        transition: all .3s linear;
+
+        &:hover {
+            background: rgba(51, 51, 51, 1);
+            color: rgb(255, 255, 255);
+            padding-left: 3rem;
+        }
+    }
+}
+
+.drop:hover .drop__content {
+    opacity: 1;
+    visibility: visible;
+}
+.logo {
+    position: absolute;
+    left: 50%;
+    top: 4rem;
+    z-index: 119;
+    transform: translateX(-50%);
+    width: 10rem;
+    height: auto;
+}
+header {
+    position: relative;
+    z-index: 99;
+    .contact {
+        display: flex;
+        justify-content: flex-end;
+        font-size: 2.2rem;
+
+        &__item {
+            padding-left: 3rem;
+
+            &--user {
+                cursor: pointer;
+                padding-right: 3rem;
+                border-right: 1px solid #222222;
+            }
+
+            &--cart {
+                position: relative;
+                padding-right: 3rem;
+                cursor: pointer;
+                span {
+                    display: inline-block;
+                    font-size: 1.2rem;
+                    background: #333333;
+                    color: #ffffff;
+                    border-radius: 50%;
+                    width: 20px;
+                    line-height: 20px;
+                    text-align: center;
+                    position: absolute;
+                    top: 0.5rem;
+                    right: 0.8rem;
+                }
+            }
+            &--search {
+                cursor: pointer;
+            }
+        }
+    }
+    .header-main {
+        line-height: 3.4rem;
+        color: rgb(34, 34, 34);
+
+        .nav {
+            &__content {
+                display: flex;
+            }
+
+            &__link {
+                display: block;
+                padding: 3rem 1rem;
+                font-size: 1.3rem;
+                transition: all .4s linear;
+                color: rgb(34, 34, 34);
+                text-transform: uppercase;
+
+                &:hover {
+                    color: rgba(34, 34, 34, 0.4);
+                }
+            }
+        }
+
+
+    }
+
+    .header-res {
+        display: none;
+        padding: 2rem 0;
+    }
+    .header-title {
+        position: absolute;
+        bottom: 10rem;
+        width: 50rem;
+        font-size: 1rem;
+
+        &__head {
+            font-size: 4.8em;
+        }
+
+        &__desc {
+            line-height: 3em;
+            font-size: 1.8em;
+            font-weight: 300;
+        }
+    }
+}
+@media (max-width: 1060px) {
+    .logo {
+        display: none;
+    }
+}
+@media (max-width: 768px) {
+    .header-main {
+        display: none;
+    }
+    header .header-res {
+        display: block;
+    }
+    header .header-title .header-title__head {
+        display: none;
+    }
+    header .header-title .header-title__desc {
+        display: none;
+    }
+    header .contact .contact__item {
+        padding-left: 1rem;
+    }
+}
